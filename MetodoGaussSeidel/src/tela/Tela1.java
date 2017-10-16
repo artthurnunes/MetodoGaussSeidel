@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import classes.Calculos;
 import classes.Conversoes;
 import classes.RecebendoDados;
 
@@ -40,6 +41,8 @@ public class Tela1 extends JFrame {
 	
 	RecebendoDados dados = new RecebendoDados();
 	Conversoes conversores = new Conversoes();
+	Calculos calculos = new Calculos();
+	
 	private JTextField txtX21;
 	private JLabel label;
 	private JTextField txtX22;
@@ -109,10 +112,12 @@ public class Tela1 extends JFrame {
 		lblX0.setBounds(10, 46, 115, 14);
 		contentPane.add(lblX0);
 		
+		
 		txtX0 = new JTextField();
 		txtX0.setBounds(122, 43, 67, 20);
 		contentPane.add(txtX0);
 		txtX0.setColumns(10);
+		txtX0.setText("0,0,0,0");
 		
 		JLabel lblNewLabel = new JLabel("<html>x<sub>1</sub></html> ");
 		lblNewLabel.setBounds(59, 104, 15, 14);
@@ -150,6 +155,7 @@ public class Tela1 extends JFrame {
 		txtE.setColumns(10);
 		txtE.setBounds(365, 129, 77, 20);
 		contentPane.add(txtE);
+		txtE.setText("0");
 		
 		lblNewLabel_2 = new JLabel("MaxItera\u00E7\u00F5es = ");
 		lblNewLabel_2.setBounds(337, 174, 93, 14);
@@ -159,6 +165,7 @@ public class Tela1 extends JFrame {
 		txtMi.setColumns(10);
 		txtMi.setBounds(428, 171, 47, 20);
 		contentPane.add(txtMi);
+		txtMi.setText("0");
 		
 		lblResposta = new JLabel("Resposta :");
 		lblResposta.setBounds(489, 132, 62, 14);
@@ -177,11 +184,6 @@ public class Tela1 extends JFrame {
 			
 				//setando os numeros na classe de dados
 				dados.setTransposta(txtX0.getText());
-				//separando os números da transposta
-				float[] stringFloat = conversores.separarTransposta();
-				
-				System.out.println(stringFloat[0]);
-				
 				
 				dados.setX11(Float.parseFloat(txtX11.getText()));
 				dados.setX12(Float.parseFloat(txtX12.getText()));
@@ -203,6 +205,15 @@ public class Tela1 extends JFrame {
 				dados.setX43(Float.parseFloat(txtX43.getText()));
 				dados.setX44(Float.parseFloat(txtX44.getText()));
 				
+				dados.setN1(Float.parseFloat(txtN1.getText()));
+				dados.setN2(Float.parseFloat(txtN2.getText()));
+				dados.setN3(Float.parseFloat(txtN3.getText()));
+				dados.setN4(Float.parseFloat(txtN4.getText()));
+				
+				dados.setMaxI(Integer.parseInt(txtMi.getText()));
+				dados.setE(Float.parseFloat(txtE.getText()));
+				
+				calculos.criandoVetorCalculo();
 				
 				
 			}
@@ -338,6 +349,7 @@ public class Tela1 extends JFrame {
 		txtN1.setColumns(10);
 		txtN1.setBounds(278, 101, 39, 20);
 		contentPane.add(txtN1);
+		txtN1.setText("0");
 		
 		lblx_4 = new JLabel("<html>x<sub>4</sub>=</html> ");
 		lblx_4.setBounds(251, 132, 20, 14);
@@ -347,6 +359,7 @@ public class Tela1 extends JFrame {
 		txtN2.setColumns(10);
 		txtN2.setBounds(278, 129, 39, 20);
 		contentPane.add(txtN2);
+		txtN2.setText("0");
 		
 		lblx_5 = new JLabel("<html>x<sub>4</sub>=</html> ");
 		lblx_5.setBounds(251, 160, 20, 14);
@@ -356,6 +369,7 @@ public class Tela1 extends JFrame {
 		txtN3.setColumns(10);
 		txtN3.setBounds(278, 157, 39, 20);
 		contentPane.add(txtN3);
+		txtN3.setText("0");
 		
 		lblx_6 = new JLabel("<html>x<sub>4</sub>=</html> ");
 		lblx_6.setBounds(251, 188, 20, 14);
@@ -365,6 +379,7 @@ public class Tela1 extends JFrame {
 		txtN4.setColumns(10);
 		txtN4.setBounds(278, 185, 39, 20);
 		contentPane.add(txtN4);
+		txtN4.setText("0");
 		
 		label_3 = new JLabel("<html>x<sub>1</sub></html> ");
 		label_3.setBounds(20, 79, 15, 14);

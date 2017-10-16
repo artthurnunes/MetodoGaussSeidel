@@ -6,14 +6,12 @@ public class RecebendoDados {
 
 	//numeros para o primeiro passo
 	private static String transposta ;
-	private static float fTransposta[];
 	
 
 	private static float x11;
 	private static float x12; //atributos privados para serem acessados de outras classes sem alteração.
 	private static float x13;
 	private static float x14;
-	
 	
 	private static float x21;
 	private static float x22;
@@ -29,6 +27,11 @@ public class RecebendoDados {
 	private static float x42;
 	private static float x43;
 	private static float x44;
+	
+	private static float n1;
+	private static float n2;
+	private static float n3;
+	private static float n4;
 	
 	//parada
 	private float e;
@@ -187,7 +190,37 @@ public class RecebendoDados {
 	public static void setX44(float x44) {
 		RecebendoDados.x44 = x44;
 	}
-	
-	
+
+	public static float getN1() {
+		return n1;
+	}
+
+	public static void setN1(float n1) {
+		RecebendoDados.n1 = n1;
+	}
+
+	public static float getN2() {
+		return n2;
+	}
+
+	public static void setN2(float n2) {
+		RecebendoDados.n2 = n2;
+	}
+
+	public static float getN3() {
+		return n3;
+	}
+
+	public static void setN3(float n3) {
+		RecebendoDados.n3 = n3;
+	}
+
+	public static float getN4() {
+		return n4;
+	}
+
+	public static void setN4(float n4) {
+		RecebendoDados.n4 = n4;
+	}
 	
 }
